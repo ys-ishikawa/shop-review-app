@@ -12,7 +12,6 @@ export const getShops = async () => {
     .firestore()
     .collection('shops')
     .orderBy('score', 'desc')
-    .where('place', '==', '品川')
     .get();
   const shops = snapshot.docs.map((doc) => doc.data() as Shop);
   return shops;
